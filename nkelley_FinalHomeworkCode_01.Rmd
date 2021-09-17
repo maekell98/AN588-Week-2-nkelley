@@ -1,0 +1,112 @@
+---
+title: "nkelley_FinalHomeworkCode_01"
+author: "maekell98"
+date: "9/17/2021"
+output: html_document
+---
+
+
+**Challenge 1**
+
+```{r Ulysses chunk}
+v <- c("Stately", "plump", "Buck", "Mulligan", "came", "from", "the", "stairhead", "bearing", "a", "bowl", "of", "lather", "on", "which", "a", "mirror", "and", "a", "razor", "lay", "crossed", "NA", "NA")
+
+m <- matrix(data = v, nrow =3, ncol = 8, byrow = FALSE)
+m
+
+x <- m[3,]
+x
+
+```
+
+
+**Challenge 2**
+
+```{r matrix chunk}
+m <- matrix(data = 1:80, nrow = 8, ncol = 10, byrow = FALSE)
+m
+
+x <- m[,c(2,3,6)] 
+x
+#part 1
+
+x <- m[c(6,8),] 
+x
+#part 2
+
+x <- m[c(2:6), c(2:9)]
+x
+#part3
+
+```
+
+
+
+
+**Challenge 3** 
+
+```{r array chunk}
+a <- array(data = 400:1, dim = c(5, 5, 4, 4))
+a
+
+a[1, 1, 1, 2]
+#returns 300
+
+a[2, 3, 2, ]
+#returns 364 264 164  64
+
+a[1:5, 1:5, 3, 3]
+#     [,1] [,2] [,3] [,4] [,5]
+#[1,]  150  145  140  135  130
+#[2,]  149  144  139  134  129
+#[3,]  148  143  138  133  128
+#[4,]  147  142  137  132  127
+#[5,]  146  141  136  131  126
+```
+
+
+
+**Challenge 4** 
+
+```{r phylogeny chunk}
+Platyrrhini <- c("Cebidea", "Atelidae", "Pitheciidae")
+Catarrhini <- c("Cercopithecidea", "Hylobatidae", "Hominidae")
+Anthropoidea <- list(Platyrrhini, Catarrhini)
+names(Anthropoidea) <- list("Platyrrhini", "Catarrhini")
+Anthropoidea
+Tarsioidea <- c("Tarsiidae")
+Haplorhini <- list(Anthropoidea, Tarsioidea)
+names(Haplorhini) <- list("Anthropoidea", "Tarsioidea")
+Haplorhini
+Lorisoidea <- c("Lorisidae", "Galagidae")
+Lemuroidea <- c("Cheirogaleidae", "Lepilemuridae", "Indriidae", "Lemuridae", "Daubentoniidae")
+Strepsirhini <- list(Lorisoidea, Lemuroidea)
+names(Strepsirhini) <- list("Lorisoidea", "Lemuroidea")
+Strepsirhini
+Primates <- list(Haplorhini, Strepsirhini)
+names(Primates) <- list("Haplorhini", "Strepsirhini")
+Primates
+```
+
+
+
+**Challenge 5**
+
+```{r matrix logical/factor chunk}
+m3 <- matrix(data = c(3, 0, 1 ,23, 1, 2, 33, 1, 1, 42, 0, 1, 41, 0, 2), nrow = 5, ncol = 3, byrow = TRUE)
+m3
+
+m3.df <- as.data.frame(t(m3))
+
+as.logical(m3.df$Col2)
+
+as.factor(m3.df$Col3)
+
+str(m3.df) 
+```
+
+
+
+
+
+
